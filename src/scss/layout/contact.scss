@@ -1,0 +1,78 @@
+@use "../styles.scss" as *;
+
+section.contact {
+  padding: calc($padding * 2) 0 calc($padding * 10) 0;
+  margin-top: calc($padding * 6);
+  .box, .box-map {
+    .title {
+      text-align: center;
+      padding-bottom: calc($padding * 2);
+      font-size: 2rem;
+    }
+  }
+
+  .box {
+    margin: calc($padding * 2) 0;
+    padding: $padding calc($padding * 2);
+    background: var(--bg-clr1);
+    @include flexVertical;
+    column-gap: $padding;
+
+    @include md {
+      @include flexHorizontal;
+      row-gap: calc($padding * 2);
+    }
+
+    form,
+    .col {
+      width: 100%;
+    }
+
+    form {
+      @include flexHorizontal;
+      row-gap: calc($padding * 2);
+
+      .first-name,
+      .last-name,
+      .phone,
+      .email,
+      .message {
+        width: 100%;
+
+        label {
+          padding-bottom: $padding;
+        }
+
+        input,
+        textarea {
+          border: 2px solid var(--txt-clr2);
+          border-radius: calc($br-8 * 4);
+          padding: calc($padding / 2) $padding;
+          background: var(--bg-clr2);
+          &:focus {
+            background: var(--bg-clr1);
+            outline: 1px solid var(--bg-clr3);
+          }
+        }
+
+        textarea {
+          height: 300px;
+          border-radius: $br-8;
+        }
+      }
+
+      button {
+        text-align: center;
+        width: 100%;
+        padding-block: $padding;
+        border-radius: calc($br-8 * 4);
+        background: var(--bg-clr2);
+        font-size: 18px;
+        letter-spacing: 1px;
+        &:hover {
+          background: var(--bg-clr1)
+        }
+      }
+    }
+  }
+}

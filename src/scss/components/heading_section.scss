@@ -1,0 +1,46 @@
+@import "../styles.scss";
+
+.heading-section {
+  padding: calc($padding) 0 calc($padding * 4) 0;
+  @include flexVertical(center, flex-start);
+  .icon {
+    width: 45px;
+    height: 45px;
+    margin-right: calc($padding / 2);
+    svg {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: hue-rotate 6s ease infinite;
+      }
+      @keyframes hue-rotate {
+        0%,100% {
+          filter: hue-rotate(0);
+        }
+        50% {
+          filter: hue-rotate(360deg);
+        }
+      }
+    }
+    svg path {
+      stroke: var(--txt-clr2);
+      stroke-dasharray: 61;
+      fill: lighten(red, 10%);
+      @media (prefers-reduced-motion: no-preference) {
+        animation: effect-svg 6s ease infinite;
+        @keyframes effect-svg {
+          0%,100% {
+            fill-opacity: .4;
+          }
+          50% {
+            fill-opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    font-size: calc($fs * 3);
+    background-image: linear-gradient(45deg, var(--txt-clr2), var(--txt-clr1));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+span,
+img,
+svg,
+input,
+label,
+iframe {
+  display: block;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+  color: inherit;
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+svg,
+input,
+textarea,
+label {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+svg {
+  height: auto;
+}
+img::selection {
+  pointer-events: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+button:active {
+  transform: scale(.95);
+}

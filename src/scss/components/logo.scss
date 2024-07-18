@@ -1,0 +1,27 @@
+@import "../../scss/styles.scss";
+.logo-app {
+  @include flexVertical(center);
+  .icon-logo {
+    @include gridCenter;
+    width: 55px;
+    height: 55px;
+    border-radius: $br-half;
+    overflow: hidden;
+  }
+  @font-face {
+    font-family: 'sirinStencil'; 
+    src: url('../../assets/font/sirinStencil.ttf');
+  }
+
+  svg text {
+    fill: var(--txt-clr2);
+    font-family: sirinStencil;
+  }
+  .text-logo {
+    width: 100px;
+    margin-left: calc($padding / 2);
+    svg text {
+      fill: var(--txt-clr1);
+    }
+  }
+}

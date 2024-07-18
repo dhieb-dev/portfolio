@@ -1,0 +1,85 @@
+@import "../styles.scss";
+
+.services {
+  position: relative;
+  padding: calc($padding * 2) 0 calc($padding * 6) 0;
+  background: var(--bg-clr2);
+
+  .content {
+    @include flexVertical;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+
+    .box {
+      padding: calc($padding / 2);
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--bg-clr2), var(--bg-clr1));
+      width: calc(50% - 1rem);
+
+      @include md {
+        width: 100%;
+      }
+
+      .col {
+        .head {
+          @include flexVertical(center);
+
+          .img {
+            width: 70px;
+            height: 70px;
+            margin-right: 1rem;
+          }
+
+          .service {
+            line-height: 1.5;
+            text-align: center;
+          }
+
+          button {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            @include gridCenter;
+
+            span {
+              display: block;
+              width: inherit;
+              height: 5px;
+              background: var(--txt-clr1);
+              border-radius: 1em;
+              transition: .3s;
+            }
+
+            &.less span {
+              position: absolute;
+              background: red;
+
+              &:first-child {
+                transform: rotate(45deg);
+              }
+
+              &:last-child {
+                transform: rotate(-45deg);
+              }
+            }
+          }
+
+        }
+
+        .body {
+          padding: $padding calc($padding / 2);
+          height: 200px;
+
+          @include md {
+            height: auto;
+          }
+
+          article {
+            line-height: 2;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@use "../styles.scss" as *;
+
+section.skills {
+  position: relative;
+  padding: calc($padding * 2) 0 calc($padding * 10) 0;
+  margin-top: calc($padding * 6);
+
+  .content-skills {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+
+      &:hover>.box:not(:hover) {
+        transform: scale(0.95);
+        opacity: .8;
+      }
+
+      .box {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+        background-color: var(--bg-clr2);
+        transition: .3s;
+
+        &:hover {
+          .body {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 1;
+
+            img {
+              opacity: 0;
+            }
+
+            .info {
+              @include gridCenter;
+            }
+          }
+
+          .type {
+            background: var(--bg-clr3);
+          }
+        }
+
+        .type {
+          font-size: 14px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: .25rem;
+          background: var(--txt-clr2);
+          width: fit-content;
+          border-radius: calc($br-8 / 2);
+          z-index: 1;
+          letter-spacing: 0.5px;
+        }
+
+        .body {
+          position: relative;
+          @include flexVertical(center, center);
+          width: 100%;
+          height: calc(100% - 3.4rem + 1.5px);
+          padding: calc($padding / 1.5) $padding;
+          transition: .5s;
+
+          img {
+            filter: drop-shadow(10px 10px 10px var(--bg-clr2));
+            pointer-events: none;
+            width: 40%;
+          }
+
+          .info {
+            padding: $padding calc($padding * 2);
+            transform: rotate3d(0, 1, 0, 180deg);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-clr1);
+            display: none;
+            text-align: center;
+
+            @include lg {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .footer {
+          position: absolute;
+          bottom: 0;
+          @include flexVertical(center);
+          padding: calc($padding / 1.5) $padding;
+          background-color: var(--bg-clr2);
+          width: 100%;
+
+          >a {
+            font-size: 14px;
+            background: var(--txt-clr2);
+            padding: .25rem;
+            border-radius: calc($br-8 / 2);
+            transition: .3s;
+
+            &:hover {
+              background: var(--bg-clr3);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #footer-section {
+    top: unset;
+    bottom: -1px !important;
+    transform: rotate(180deg);
+
+    path {
+      fill: var(--bg-clr2);
+    }
+  }
+}

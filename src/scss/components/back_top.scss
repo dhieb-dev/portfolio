@@ -1,0 +1,22 @@
+@use "../styles.scss" as *;
+.back-top {
+  width: 40px;
+  height: 40px;
+  border-radius: $br-half;
+  cursor: pointer;
+  animation: translated 1.5s ease-in-out infinite;
+  @keyframes translated {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  svg {
+    path {
+      stroke: var(--bg-clr3);
+      fill: var(--txt-clr2);
+    }
+  }
+}

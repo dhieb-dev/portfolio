@@ -1,0 +1,18 @@
+.overlay-bottom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.overlay-top {
+  position: absolute;
+  bottom: calc(100% - 1px);
+  left: 0;
+}
+
+.overlay-bottom,
+.overlay-top {
+  path {
+    fill: var(--bg-clr2) !important;
+  }
+}

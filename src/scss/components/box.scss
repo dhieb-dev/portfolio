@@ -1,0 +1,5 @@
+@use "../styles.scss" as *;
+.box {
+  border-radius: $br-8;
+  border: 2px solid var(--bg-clr2);
+}

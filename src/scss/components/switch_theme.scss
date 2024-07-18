@@ -1,0 +1,50 @@
+@import "../styles.scss";
+
+.btn-theme {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: $br-half;
+  background: var(--bg-clr1);
+  cursor: pointer;
+  padding: calc($padding / 4);
+  z-index: 10;
+  .btn-menu {
+    svg {
+      pointer-events: none;
+      path {
+        stroke: var(--txt-clr2);
+        fill: var(--txt-clr1);
+      }
+    }
+  }
+  .selector-theme {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-clr1);
+    border: 1px solid var(--bg-clr2);
+    border-radius: calc($br-8 / 2);
+    overflow: hidden;
+    .light,
+    .dark,
+    .system {
+      padding: calc($padding / 4);
+      @include flexVertical(center, flex-start);
+
+      &:hover {
+        background-color: var(--bg-clr2);
+      }
+
+      >span:first-child {
+        width: 1rem;
+        margin-right: calc($padding / 6);
+      }
+
+      >span:last-child {
+        font-size: calc($fs / 1.4);
+      }
+    }
+  }
+}

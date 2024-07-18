@@ -1,0 +1,11 @@
+header.header-app {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+
+  .first-img {
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+}

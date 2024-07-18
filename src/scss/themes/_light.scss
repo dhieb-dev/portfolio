@@ -1,0 +1,15 @@
+
+$clr1: #3d3d3d;
+$clr2: #85c4f4;
+
+$bg-clr1: rgba(245, 245, 245, 0.8);
+$bg-clr2: #ebebeb;
+$bg-clr3: #c7c9fe;
+
+@mixin light-theme {
+  --bg-clr1: #{$bg-clr1};
+  --bg-clr2: #{$bg-clr2};
+  --bg-clr3: #{$bg-clr3};
+  --txt-clr1: #{$clr1};
+  --txt-clr2: #{$clr2};
+}

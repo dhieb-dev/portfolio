@@ -1,0 +1,90 @@
+@use "../styles.scss" as *;
+
+section.about {
+  position: relative;
+  padding: calc($padding * 2) 0 calc($padding * 6) 0;
+  background: linear-gradient(0deg, var(--bg-clr2), var(--bg-clr2));
+  z-index: 0;
+
+  .content-about {
+    >.plan:first-child {
+      padding-bottom: calc($padding * 2);
+      border-bottom: 2px solid var(--bg-clr3);
+    }
+
+    .plan .title {
+      padding-bottom: calc($padding * 1.5);
+      text-align: start
+    }
+
+    .row {
+      @include flexVertical(center);
+      margin-top: calc($padding * 2);
+
+      @include lg {
+        @include flexHorizontal;
+      }
+
+      >.plan:first-child {
+        flex: 1;
+
+        @include lg {
+          order: 1;
+        }
+        p {
+          columns: 200px 2;
+          column-gap: $padding;
+        }
+
+        .box:last-child {
+          .title {
+            border-top: 1px solid var(--txt-clr2);
+            padding-bottom: 0;
+            padding-top: $padding;
+          }
+          ul {
+            li {
+              padding-top: calc($padding * 1.5);
+              font-size: 15px;
+              line-height: 2;
+              border-bottom: 1px solid var(--txt-clr2);
+              span {
+                padding: calc($padding / 2) $padding;
+              }
+            }
+          }
+        }
+      }
+
+      .avatar {
+        position: relative;
+        margin-left: calc($padding * 1.5);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        z-index: 0;
+
+        @include lg {
+          width: 70%;
+          margin: calc($padding * 2) auto;
+        }
+
+        img,
+        &::after {
+          max-width: 500px;
+          border-radius: $br-8;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-color: var(--bg-clr1);
+          transform: translate(40px, -40px);
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

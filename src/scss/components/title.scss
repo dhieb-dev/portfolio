@@ -1,0 +1,7 @@
+@use "../styles.scss" as *;
+.title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: calc($padding * 4);
+  line-height: 1.5;
+}

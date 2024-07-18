@@ -1,0 +1,15 @@
+
+$clr1-dark: #fdfdfd;
+$clr2-dark: #004b84;
+
+$bg-clr1-dark: rgba(28, 28, 28, 0.8);
+$bg-clr2-dark: rgb(16, 16, 16);
+$bg-clr3-dark: #5888ff;
+
+@mixin dark-theme {
+  --bg-clr1: #{$bg-clr1-dark};
+  --bg-clr2: #{$bg-clr2-dark};
+  --bg-clr3: #{$bg-clr3-dark};
+  --txt-clr1: #{$clr1-dark};
+  --txt-clr2: #{$clr2-dark};
+}

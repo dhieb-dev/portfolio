@@ -1,0 +1,70 @@
+@import "../../scss/styles.scss";
+
+section.hero {
+  .container {
+    position: relative;
+    height: 100%;
+    padding-block: calc($padding * 5);
+    @include flexVertical();
+  }
+  p {
+    font-size: calc($fs * 1.5);
+    margin-bottom: calc($padding / 2);
+
+    span {
+      font-size: calc($fs * 2.5);
+      color: var(--txt-clr2);
+      margin-top: calc($padding / 2);
+    }
+  }
+
+  p:last-child {
+    font-size: calc($fs * 2.5);
+  }
+
+  .row:last-child {
+    width: fit-content;
+    background: var(--bg-clr1);
+    border-radius: calc($br-8 * 2);
+    padding: 0 $padding;
+    font-size: calc($fs * 1.2);
+    @include flexVertical(center,flex-start);
+    margin-top: $padding;
+
+    button {
+      margin-left: calc($padding / 2);
+      animation: translate 1s ease-in-out infinite;
+
+      @keyframes translate {
+
+        0%,
+        100% {
+          transform: translateY(-10px);
+        }
+
+        50% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    svg path {
+      fill: var(--txt-clr2);
+      stroke: var(--bg-clr2);
+    }
+  }
+
+  .plan:last-child {
+    img {
+      filter: drop-shadow(10px 10px 0 var(--bg-clr2));
+      @include md {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        opacity: .2;
+        filter: blur(6px);
+      }
+    }
+  }
+}

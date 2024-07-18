@@ -1,0 +1,31 @@
+@use "./scss/base/reset"; 
+
+@use "./scss/styles.scss" as *;
+
+:root {
+  @include light-theme;
+  &.dark {
+    @include dark-theme;
+    svg path {
+      fill: var(--txt-clr1);
+    }
+  }
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background: var(--bg-clr2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-clr3);
+  border-radius: $br-8;
+  &:hover {
+    background: lighten(red, 20%);
+  }
+}
+::selection {
+  color: var(--bg-clr3);
+}

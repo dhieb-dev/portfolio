@@ -1,0 +1,67 @@
+@import "../styles.scss";
+
+footer.footer-app {
+  position: relative;
+  background: var(--bg-clr1);
+  padding: calc($padding / 2) 0;
+  .overlay-top {
+    path {
+      fill: var(--bg-clr1) !important;
+    }
+  }
+  .container {
+    .content-footer {
+      .row {
+        @include flexVertical(center);
+        @include md {
+          @include flexHorizontal;
+          gap:$padding;
+        }
+      }
+
+      .social {
+        @include md {
+          width: 100%;
+          text-align: center;
+        }
+        h4 {
+          margin-bottom: $padding;
+        }
+      }
+
+      .info {
+        @include flexVertical;
+        row-gap: calc($padding * 2);
+        padding-block: calc($padding * 2);
+
+        @include md {
+          @include flexHorizontal;
+        }
+
+        svg {
+          width: 40px;
+          margin-bottom: calc($padding / 2);
+
+          path {
+            stroke: var(--txt-clr1);
+            fill: var(--bg-clr1);
+          }
+        }
+
+        .address,
+        .phone,
+        .email {
+          width: 100%;
+          @include flexHorizontal(center);
+        }
+      }
+    }
+
+    p {
+      padding-block: $padding;
+      border-top: 2px solid var(--txt-clr2);
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+}

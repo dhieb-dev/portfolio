@@ -1,0 +1,14 @@
+@import "../styles.scss";
+.list-social {
+  @include flexVertical;
+  gap: 1.5rem;
+  li {
+    width: 3rem;
+  }
+}
+.dark .list-social {
+  svg, path {
+    fill: unset;
+    stroke: blue;
+  }
+}
